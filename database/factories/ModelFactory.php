@@ -26,3 +26,11 @@ $factory->define(App\PasswordReset::class, function (Faker\Generator $faker) {
         'token' => str_random(10),
     ];
 });
+
+$factory->define(App\Post::class, function (Faker\Generator $faker) {
+    return [
+        'name'  => $faker->name,
+        'topic' => $faker->word,
+    ];
+});
+

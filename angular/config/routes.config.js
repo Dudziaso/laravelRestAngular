@@ -60,5 +60,13 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
                     templateUrl: getView('reset-password')
                 }
             }
-        });
+        })
+        .state('app.create_post', {                 //to dodalem
+        url: '/create-post',                        //to dodalem
+        views: {                                    //to dodalem
+          'main@': {                                //to dodalem
+            templateUrl: getView('create_post')     //to dodalem
+          }                                         //to dodalem
+        }                                             //to dodalem
+      });
 }

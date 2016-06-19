@@ -17,6 +17,7 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/unsupported-browser', 'AngularController@unsupported');
 
+
 });
 
 //public API routes
@@ -30,6 +31,8 @@ $api->group(['middleware' => ['api']], function ($api) {
     $api->post('auth/password/email', 'Auth\PasswordResetController@sendResetLinkEmail');
     $api->get('auth/password/verify', 'Auth\PasswordResetController@verify');
     $api->post('auth/password/reset', 'Auth\PasswordResetController@reset');
+
+    $api->post('posts', 'CreatePostController@create');
 
 });
 
