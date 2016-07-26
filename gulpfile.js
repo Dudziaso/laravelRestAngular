@@ -22,7 +22,9 @@ elixir(function(mix) {
             'public/js/vendor.js',
             'public/js/partials.js',
             'public/js/app.js',
+            'public/js/bootstrap.min.js',
             'public/css/vendor.css',
+            'public/css/bootstrap.min.css',
             'public/css/app.css'
         ],
         karmaJsDir = [

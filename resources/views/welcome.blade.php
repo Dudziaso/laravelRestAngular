@@ -33,6 +33,10 @@
             .title {
                 font-size: 96px;
             }
+            
+            .modal-dialog, .modal-content{
+                z-index:1051;
+            }
         </style>
     </head>
     <body>

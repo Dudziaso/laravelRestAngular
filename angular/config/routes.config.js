@@ -62,11 +62,30 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             }
         })
         .state('app.create_post', {                 //to dodalem
-        url: '/create-post',                        //to dodalem
-        views: {                                    //to dodalem
-          'main@': {                                //to dodalem
-            templateUrl: getView('create_post')     //to dodalem
-          }                                         //to dodalem
-        }                                             //to dodalem
-      });
+            url: '/create-post',
+            //data: {auth: true},//{auth: true} would require JWT auth                        //to dodalem
+            views: {                                    //to dodalem
+              'main@': {                                //to dodalem
+                templateUrl: getView('create_post')     //to dodalem
+              }                                         //to dodalem
+            }                                              //to dodalem
+        })
+        .state('app.get_posts', {                 //to dodalem
+            url: '/get-posts',
+            //data: {auth: true},//{auth: true} would require JWT auth                        //to dodalem
+            views: {                                    //to dodalem
+              'main@': {                                //to dodalem
+                templateUrl: getView('get_posts')     //to dodalem
+              }                                         //to dodalem
+            }
+        })
+        .state('app.employee_page', {                 //to dodalem
+            url: '/employeeCards',
+            //data: {auth: true},//{auth: true} would require JWT auth                        //to dodalem
+            views: {                                    //to dodalem
+              'main@': {                                //to dodalem
+                templateUrl: getView('employee_page')     //to dodalem
+              }                                         //to dodalem
+            }
+        });
 }

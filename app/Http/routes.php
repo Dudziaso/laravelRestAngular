@@ -16,7 +16,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/', 'AngularController@serveApp');
 
     Route::get('/unsupported-browser', 'AngularController@unsupported');
-
+    Route::get('/employeeCards2', 'EmploeeCardController@index2');
 
 });
 
@@ -32,11 +32,16 @@ $api->group(['middleware' => ['api']], function ($api) {
     $api->get('auth/password/verify', 'Auth\PasswordResetController@verify');
     $api->post('auth/password/reset', 'Auth\PasswordResetController@reset');
 
-    $api->post('posts', 'CreatePostController@create');
+   // $api->post('posts', 'CreatePostController@create');
+    //$api->get('posts', 'CreatePostController@get');
+    $api->get('employeeCards', 'EmploeeCardController@index');
+    
 
 });
 
 //protected API routes with JWT (must be logged in)
 $api->group(['middleware' => ['api', 'api.auth']], function ($api) {
-
+	$api->post('posts', 'CreatePostController@create');
+    $api->get('posts', 'CreatePostController@get');
+    $api->post('CreateEmployeeCard', 'EmploeeCardController@store');
 });

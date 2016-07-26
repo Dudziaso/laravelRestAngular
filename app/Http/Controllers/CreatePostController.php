@@ -15,12 +15,29 @@ class CreatePostController extends Controller
         'topic' => 'required',
         ]);
     
-      $post = new Post;
-      $post->name = $request->input('name');
-      $post->topic = $request->input('topic');
-      $post->save();
-    
-      return response()->success(compact('post'));
+        $post = new Post;
+        $post->name = $request->input('name');
+        $post->topic = $request->input('topic');
+        $post->save();
+      
+        return response()->success(compact('post'));      
   }
+
+  public function get()
+  {
+      $posts = Post::all();  
+      //dd($posts);
+      //$user = Auth::user();
+      return response()->success($posts);
+      //return response($posts);
+  }
+
+    // public function get()
+    // {
+    //     $posts = App\Post::get();
+
+    //     return response()
+    //     ->success(compact('posts'));
+    // }
   
 }
