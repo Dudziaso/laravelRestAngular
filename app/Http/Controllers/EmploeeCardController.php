@@ -130,9 +130,11 @@ class EmploeeCardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
         //
-        return EmployeeCard::where('id',$id)->delete();
+        $id = $request->input('id');
+        $card = EmployeeCard::where('id',$id)->delete();
+        return response($card);
     }
 }

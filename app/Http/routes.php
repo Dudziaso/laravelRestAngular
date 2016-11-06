@@ -36,6 +36,7 @@ $api->group(['middleware' => ['api']], function ($api) {
     //$api->get('posts', 'CreatePostController@get');
     $api->get('employeeCards', 'EmploeeCardController@index');
     
+    $api->post('RemoveEmployeeCard', 'EmploeeCardController@destroy');
 
 });
 
@@ -44,4 +45,5 @@ $api->group(['middleware' => ['api', 'api.auth']], function ($api) {
 	$api->post('posts', 'CreatePostController@create');
     $api->get('posts', 'CreatePostController@get');
     $api->post('CreateEmployeeCard', 'EmploeeCardController@store');
+   // $api->post('RemoveEmployeeCard', 'EmploeeCardController@destroy');
 });
