@@ -31,6 +31,24 @@ $api->group(['middleware' => ['api']], function ($api) {
     $api->get('auth/password/verify', 'Auth\PasswordResetController@verify');
     $api->post('auth/password/reset', 'Auth\PasswordResetController@reset');
 
+    
+    //EmployeeController
+    $api->post('employee/add', 'EmployeeController@add');
+    $api->get('employee/remove', 'EmployeeController@remove');
+    $api->post('employee/edit', 'EmployeeController@edit');
+    $api->get('employee/getTotalHours', 'EmployeeController@getTotalHours');
+
+    //TimeRegisterController
+    $api->post('timeregister/register', 'TimeRegisterController@register');
+    $api->post('timeregister/addManualTime', 'TimeRegisterController@addManualTime');
+
+    //CalculateHoursController
+    $api->post('calculateHours/fillWorkDay', 'CalculateHoursController@fillWorkDay');
+    $api->get('calculateHours/calculateForMonth', 'CalculateHoursController@calculateForMonth');
+    $api->get('calculateHours/getCurrentStatus', 'CalculateHoursController@getCurrentStatus');
+
+
+
 });
 
 //protected API routes with JWT (must be logged in)
